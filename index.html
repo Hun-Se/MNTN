@@ -17,43 +17,69 @@
   <!-- Font Awsome -->
   <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
     integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
-  <script src="./main.js"></script>
+
   <link rel="stylesheet" href="./main.css">
+
+
+  <!-- Gsap/ min -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"
+    integrity="sha512-cdV6j5t5o24hkSciVrb8Ki6FveC2SgwGfLE31+ZQRHAeSRxYhAQskLkq3dLm8ZcWe1N3vBOEYmmbhzf7NTtFFQ=="
+    crossorigin="anonymous"></script>
+  <!-- Gsap / Scroll to Plugin -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/ScrollToPlugin.min.js"
+    integrity="sha512-kSI9CgGh60rJbNVeMJvfNX0UTKAq8LEOea/yKJQbFpIroxT7bf9/zUFXbnfsQP5F6xlOOHtCfBPgsE1ceiHnRw=="
+    crossorigin="anonymous"></script>
+  <!-- jQuery CDN -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/ScrollMagic.min.js" integrity="sha512-8E3KZoPoZCD+1dgfqhPbejQBnQfBXe8FuwL4z/c8sTrgeDMFEnoyTlH3obB4/fV+6Sg0a0XF+L/6xS4Xx1fUEg==" crossorigin="anonymous"></script>
+
+  <script defer src="./main.js"></script>
+
 
 </head>
 
 <body>
+  <!-- Jquery -->
+  <script>
+    function fnMove(seq) {
+      var offset = $("#section" + seq).offset();
+      $('html, body').animate({
+        scrollTop: offset.top
+      }, 400);
+    }
+  </script>
 
   <div class="site-wrapper">
     <div class="hero-section">
-      <div class="navbar">
-        <div class="content-wrapper nav">
-          <a href="" class="logo">
-            <div class="mntn-logo">
-              MNTN
-            </div>
-          </a>
-          <div class="nav-link-wrapper">
-            <ul class="menu">
-              <li>
-                <a href="javascript:void(0)" class="nav-link">Equipment</a>
-              </li>
-              <li>
-                <a href="javascript:void(0)" class="nav-link">About us</a>
-              </li>
-              <li>
-                <a href="javascript:void(0)" class="nav-link">Blog</a>
-              </li>
-            </ul>
-          </div>
-          <div class="account">
-            <a href="javascript:void(0)" class="icon-account">
-              <div><i class="far fa-user-circle"></i></div>
-              <div>Account</div>
+        <div class="navbar">
+          <div class="content-wrapper nav">
+            <a href="" class="logo">
+              <div id="section1"></div>
+              <div class="mntn-logo">
+                MNTN
+              </div>
             </a>
+            <div class="nav-link-wrapper">
+              <ul class="menu">
+                <li>
+                  <a href="javascript:void(0)" class="nav-link">Equipment</a>
+                </li>
+                <li>
+                  <a href="javascript:void(0)" class="nav-link">About us</a>
+                </li>
+                <li>
+                  <a href="javascript:void(0)" class="nav-link">Blog</a>
+                </li>
+              </ul>
+            </div>
+            <div class="account">
+              <a href="javascript:void(0)" class="icon-account">
+                <div><i class="far fa-user-circle"></i></div>
+                <div>Account</div>
+              </a>
+            </div>
           </div>
         </div>
-      </div>
       <div class="content-wrapper hero">
         <div class="social-link">
           <div class="text-block">Follow us</div>
@@ -70,18 +96,20 @@
               Be Preapared For The Mountains And Beyond!
             </h1>
           </div>
-          <a href="" class="link-to hero">
+          <div id="to-bottom">
             <span>scroll down</span>
-            <i class="fas fa-arrow-down"></i>
-          </a>
+            <div class="material-icons">
+              arrow_downward
+            </div>
+          </div>
         </div>
       </div>
       <div class="nav-slider">
         <div class="nav-slider-links">
-          <a href="" class="slider-link">start</a>
-          <a href="" class="slider-link">01</a>
-          <a href="" class="slider-link">02</a>
-          <a href="" class="slider-link">03</a>
+          <a href="javascript:void(0)" onclick="fnMove(1)" class="slider-link">start</a>
+          <a href="javascript:void(0)" onclick="fnMove(2)" class="slider-link">01</a>
+          <a href="javascirpt:void(0)" onclick="fnMove(3)" class="slider-link">02</a>
+          <a href="javascirpt:void(0)" onclick="fnMove(4)" class="slider-link">03</a>
         </div>
         <div class="indicator-line">
           <div class="indicator"></div>
@@ -98,117 +126,134 @@
 
 
     <div class="content-section">
-      <div class="content-wrapper content">
-        <div class="grid">
-          <div class="content-text">
-            <div class="count">01</div>
-            <div class="tagline">
-              <div class="tagline-line"></div>
-              <h5 class="heading-tagline">GET STARTED</h5>
+
+      <div id="section2">
+        <div class="content-wrapper content">
+          <div class="grid">
+            <div class="content-text">
+              <div class="count">01</div>
+              <div class="tagline">
+                <div class="tagline-line"></div>
+                <h5 class="heading-tagline">GET STARTED</h5>
+              </div>
+              <h2>What level of hiker are you?</h2>
+              <p>Determining what level of hiker you are can be an important tool when planning future hikes. This
+                hiking
+                level guide will help you plan hikes according to different hike ratings set by various websites like
+                All
+                Trails and Modern Hiker. What type of hiker are you – novice, moderate, advanced moderate, expert, or
+                expert backpacker?
+              </p>
+              <a href="" class="link-to hero">
+                <div>read more</div>
+                <div class="material-icons">
+                  arrow_forward
+                </div>
+              </a>
             </div>
-            <h2>What level of hiker are you?</h2>
-            <p>Determining what level of hiker you are can be an important tool when planning future hikes. This hiking
-              level guide will help you plan hikes according to different hike ratings set by various websites like All
-              Trails and Modern Hiker. What type of hiker are you – novice, moderate, advanced moderate, expert, or
-              expert backpacker?
-            </p>
-            <a href="" class="link-to hero">
-              <div>read more</div>
-              <div class="icon-scroll"><i class="fas fa-arrow-right"></i></div>
-            </a>
+            <img src="https://mntn.krystonschwarze.com/images/01.png" alt="img_post1">
           </div>
-          <img src="https://mntn.krystonschwarze.com/images/01.png" alt="img_post1">
-        </div>
-      </div>
-      <div class="content-wrapper content">
-        <div class="grid">
-          <div class="content-text">
-            <div class="count">02</div>
-            <div class="tagline">
-              <div class="tagline-line"></div>
-              <h5 class="heading-tagline">HIKING ESSENTIALS</h5>
-            </div>
-            <h2>Picking the right Hiking Gear!</h2>
-            <p>
-              The nice thing about beginning hiking is that you don’t really need any special gear,
-              you can probably get away with things you already have.
-              Let’s start with clothing. A typical mistake hiking beginners make is wearing jeans and regular clothes,
-              which will get heavy and chafe wif they get sweaty or wet.
-            </p>
-            <a href="" class="link-to hero">
-              <div>read more</div>
-              <div class="icon-scroll"><i class="fas fa-arrow-right"></i></div>
-            </a>
-          </div>
-          <img src="https://mntn.krystonschwarze.com/images/02.png" alt="img_post2">
-        </div>
-      </div>
-      <div class="content-wrapper content">
-        <div class="grid">
-          <div class="content-text">
-            <div class="count">03</div>
-            <div class="tagline">
-              <div class="tagline-line"></div>
-              <h5 class="heading-tagline">GET STARTED</h5>
-            </div>
-            <h2>Understand Your Map & Timing</h2>
-            <p>
-              o start, print out the hiking guide and map. If it’s raining, throw them in a Zip-Lock bag.
-              Read over the guide, study the map, and have a good idea of what to expect. I like to know
-              what my next landmark is as I hike. For example, I’ll read the guide and know that say, in a mile,
-              I make a right turn at the junction..
-            </p>
-            <a href="" class="link-to hero">
-              <div>read more</div>
-              <div class="icon-scroll"><i class="fas fa-arrow-right"></i></div>
-            </a>
-          </div>
-          <img src="https://mntn.krystonschwarze.com/images/03.png" alt="img_post3">
         </div>
       </div>
 
-      <div class="footer">
-        <div class="content-wrapper content footer">
-          <div class="grid footer">
-            <div class="footer-left">
-              <div class="top">
-                <a href="" class="logo">
-                  <div class="mntn-logo">
-                    MNTN
+        <div id="section3">
+          <div class="content-wrapper content">
+            <div class="grid">
+              <img src="https://mntn.krystonschwarze.com/images/02.png" alt="img_post2">
+              <div class="content-text">
+                <div class="count-right">02</div>
+                <div class="tagline">
+                  <div class="tagline-line"></div>
+                  <h5 class="heading-tagline">HIKING ESSENTIALS</h5>
+                </div>
+                <h2>Picking the right Hiking Gear!</h2>
+                <p>
+                  The nice thing about beginning hiking is that you don’t really need any special gear,
+                  you can probably get away with things you already have.
+                  Let’s start with clothing. A typical mistake hiking beginners make is wearing jeans and regular
+                  clothes,
+                  which will get heavy and chafe wif they get sweaty or wet.
+                </p>
+                <a href="" class="link-to hero">
+                  <div>read more</div>
+                  <div class="material-icons">
+                    arrow_forward
                   </div>
                 </a>
-                <div class="footer-text">
-                  Get out there & discover your next slope, mountain & destination!
-                </div>
               </div>
-              <div class="copyright">
-                Copyright 2020 MNTN, Inc. Terms & Privacy
-                <br>
-                A concept by
-                <a href="https://krystonschwarze.com/" class="author">Kryston Schwarze</a>
-              </div>
-            </div>
-            <div class="footer-right">
-             <div class="links">
-               <div class="footer-links">
-                 <h4>More on The Blog</h4>
-                 <a href="javascript:void(0)" class="footer-link">About MNTN</a>
-                 <a href="javascript:void(0)" class="footer-link">Contributors & Writers</a>
-                 <a href="javascript:void(0)" class="footer-link">Write For Us</a>
-                 <a href="javascript:void(0)" class="footer-link">Contact Us</a>
-                 <a href="javascript:void(0)" class="footer-link">Privacy Policy</a>
-               </div>
-               <div class="footer-links">
-                <h4>More on MNTN</h4>
-                <a href="javascript:void(0)" class="footer-link">The Team</a>
-                <a href="javascript:void(0)" class="footer-link">Jobs</a>
-                <a href="javascript:void(0)" class="footer-link">Press</a>
-               </div>
-             </div>
             </div>
           </div>
         </div>
-      </div>
+        <div id="section4">
+          <div class="content-wrapper content">
+            <div class="grid">
+              <div class="content-text">
+                <div class="count">03</div>
+                <div class="tagline">
+                  <div class="tagline-line"></div>
+                  <h5 class="heading-tagline">GET STARTED</h5>
+                </div>
+                <h2>Understand Your Map & Timing</h2>
+                <p>
+                  o start, print out the hiking guide and map. If it’s raining, throw them in a Zip-Lock bag.
+                  Read over the guide, study the map, and have a good idea of what to expect. I like to know
+                  what my next landmark is as I hike. For example, I’ll read the guide and know that say, in a mile,
+                  I make a right turn at the junction..
+                </p>
+                <a href="" class="link-to hero">
+                  <div>read more</div>
+                  <div class="material-icons">
+                    arrow_forward
+                  </div>
+                </a>
+              </div>
+              <img src="https://mntn.krystonschwarze.com/images/03.png" alt="img_post3">
+            </div>
+          </div>
+        </div>
+        <div class="footer">
+          <div class="content-wrapper content footer">
+            <div class="grid footer">
+              <div class="footer-left">
+                <div class="top">
+                  <a href="" class="logo">
+                    <div class="mntn-logo">
+                      MNTN
+                    </div>
+                  </a>
+                  <div class="footer-text">
+                    Get out there & discover your next slope, mountain & destination!
+                  </div>
+                </div>
+                <div class="copyright">
+                  Copyright 2020 MNTN, Inc. Terms & Privacy
+                  <br>
+                  A concept by
+                  <a href="https://krystonschwarze.com/" class="author">Kryston Schwarze</a>
+                </div>
+              </div>
+              <div class="footer-right">
+                <div class="links">
+                  <div class="footer-links">
+                    <h4>More on The Blog</h4>
+                    <a href="javascript:void(0)" class="footer-link">About MNTN</a>
+                    <a href="javascript:void(0)" class="footer-link">Contributors & Writers</a>
+                    <a href="javascript:void(0)" class="footer-link">Write For Us</a>
+                    <a href="javascript:void(0)" class="footer-link">Contact Us</a>
+                    <a href="javascript:void(0)" class="footer-link">Privacy Policy</a>
+                  </div>
+                  <div class="footer-links">
+                    <h4>More on MNTN</h4>
+                    <a href="javascript:void(0)" class="footer-link">The Team</a>
+                    <a href="javascript:void(0)" class="footer-link">Jobs</a>
+                    <a href="javascript:void(0)" class="footer-link">Press</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
 </body>
 
 </html>
