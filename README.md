@@ -1,4 +1,4 @@
 MNTN homepage
 
 Stack
-Frontend: HTML,CSS
+Frontend: HTML,CSS, JavaScript
